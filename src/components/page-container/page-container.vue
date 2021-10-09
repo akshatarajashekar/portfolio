@@ -5,7 +5,7 @@
       check out the
   </div>
 </template>
-<style>
+<style lang="scss">
 h3 {
   margin: 40px 0 0;
 }
@@ -24,6 +24,9 @@ a {
 <script>
 import Vue from 'vue';
 
-export default class PageContainer extends Vue{
+const cssPrefix = 'page-container';
+
+export default class PageContainer extends Vue {
+  cssPrefix = cssPrefix;
 }
 </script>
