@@ -6,27 +6,16 @@
   </div>
 </template>
 <style lang="scss">
-h3 {
+.home {
   margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
 }
 </style>
 <script>
 import Vue from 'vue';
 
-const cssPrefix = 'page-container';
+const cssPrefix = 'home';
 
-export default class PageContainer extends Vue {
+export default class Home extends Vue {
   cssPrefix = cssPrefix;
 }
 </script>

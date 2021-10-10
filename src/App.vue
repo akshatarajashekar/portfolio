@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <PageContainer msg="Welcome to Your Vue.js App"/>
+    <Home/>
   </div>
 </template>
 
 <script>
-import PageContainer from './components/page-container/page-container.vue'
+import Home from './modules/home/home.vue'
 
 export default {
   name: 'App',
   components: {
-    PageContainer
+    Home
   }
 }
 </script>
