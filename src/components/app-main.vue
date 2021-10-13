@@ -1,6 +1,6 @@
 <template>
   <div :class="`${cssPrefix}`">
-      <AppHeader/>
+    <app-header></app-header>
     <router-view/>
   </div>
 </template>
@@ -10,10 +10,13 @@
 </style>
 <script lang="ts">
 import { defineComponent } from 'vue';
+import AppHeader from './app-header.vue';
+
 const cssPrefix = 'app-main';
 
 export default defineComponent({
   name: 'AppMain',
+  components: { AppHeader },
   props: {
     msg: String,
   },

@@ -1,26 +1,61 @@
 <template>
-  <div :class="`${cssPrefix}`">
-
+  <div :class="[`${cssPrefix}`]">
+    <div :class="[`flex-box`]">
+      <div :class="['flex-box-left']"  @click="navigateToHome">
+        <img :class="[`${cssPrefix}__home-icon`]" src="../assets/home.png"/>
+      </div>
+      <div :class="['flex-box-right']">
+        <div :class="`${cssPrefix}__button`">
+          <Button :content="'About'" @click="navigateToAbout"></Button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <style scoped lang="scss">
 .app-header {
-
+  padding: 20px 40px 0 40px;
+  &__home-icon {
+    width: 25px;
+    height: 25px;
+    padding-top: 6px;
+  }
+  .flex-box {
+    display: flex;
+  }
+  .flex-box-left {
+    justify-content: flex-start;
+  }
+  .flex-box-right {
+    justify-content: flex-end;
+    margin-left: auto;
+  }
 }
 </style>
 <script lang="ts">
-import { defineComponent } from 'vue';
-const cssPrefix = 'app-header';
+import { defineComponent } from "vue";
+import Button from "../shared/button.vue";
+import router from "@/router";
+
+const cssPrefix = "app-header";
 
 export default defineComponent({
-  name: 'AppHeader',
-  props: {
-  },
+  name: "AppHeader",
+  components: { Button },
+  props: {},
   data() {
     return {
       cssPrefix,
     };
-  }
+  },
+  methods: {
+    navigateToAbout() {
+      router.push({ name: "About" });
+    },
+    navigateToHome() {
+      router.push({ name: "AppMain" });
+    }
+  },
 });
 </script>
 
