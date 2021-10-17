@@ -2,7 +2,7 @@
   <div :class="[`${cssPrefix}`]">
     <div :class="[`flex-box`]">
       <div :class="['flex-box-left']"  @click="navigateToHome">
-        <img :class="[`${cssPrefix}__home-icon`]" src="../assets/home.png"/>
+        <img :class="[`${cssPrefix}__home-icon`]" src="../assets/images/home.png"/>
       </div>
       <div :class="['flex-box-right']">
         <div :class="`${cssPrefix}__button`">
@@ -14,7 +14,7 @@
 </template>
 <style scoped lang="scss">
 .app-header {
-  padding: 20px 40px 0 40px;
+  padding: 20px 40px;
   &__home-icon {
     width: 25px;
     height: 25px;
