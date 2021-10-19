@@ -6,6 +6,7 @@
 <style lang="scss">
 .nav-item {
   &__container {
+    width: 55px;;
     height: 34px;
     display: flex;
     justify-content: center;
@@ -13,14 +14,22 @@
     align-items: center;
     border-bottom: 3px solid #24b3a2;
     cursor: pointer;
-    margin: 0px 10px;
+    margin: 10px 10px;
   }
   &__text_property {
     color: white;
     font-size: 16px;
     font-family: "Open Sans";
   }
+  
 }
+.nav-item__container:hover {
+    width: 55px;
+    background: #24b3a2;
+    border-radius: 50%;
+    height: 55px;
+    margin: 0 10px;
+  }
 </style>
 <script lang="ts">
 import { defineComponent } from 'vue';
