@@ -14,7 +14,8 @@
 </template>
 <style lang="scss">
 .home {
-  padding-top: 20px;
+  padding-top: 120px;
+  color: white;
   &__body {
     
     padding: 20px 40px;

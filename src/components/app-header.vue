@@ -5,8 +5,8 @@
         <img :class="[`${cssPrefix}__home-icon`]" src="../assets/images/home.png"/>
       </div>
       <div :class="['flex-box-right']">
-        <div :class="`${cssPrefix}__button`">
-          <Button :content="'About'" @click="navigateToAbout"></Button>
+        <div :class="`${cssPrefix}__nav-element`">
+          <NavItem :content="'About'"  @click="navigateToAbout" ></NavItem>
         </div>
       </div>
     </div>
@@ -34,14 +34,14 @@
 </style>
 <script lang="ts">
 import { defineComponent } from "vue";
-import Button from "../shared/button.vue";
+import NavItem from "../shared/nav-item.vue";
 import router from "@/router";
 
 const cssPrefix = "app-header";
 
 export default defineComponent({
   name: "AppHeader",
-  components: { Button },
+  components: { NavItem },
   props: {},
   data() {
     return {

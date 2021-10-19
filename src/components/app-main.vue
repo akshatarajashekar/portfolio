@@ -6,6 +6,9 @@
 </template>
 <style scoped lang="scss">
 .app-main {
+  background-color: black;
+  width: 100%;
+  height: 100%;
 }
 </style>
 <script lang="ts">
