@@ -3,16 +3,16 @@
     <div :class="[`flex-box`]">
       <div :class="['flex-box-right']">
         <div :class="`${cssPrefix}__nav-element`">
-          <NavItem :content="'Home'"  @click="navigateTo('Home')" ></NavItem>
+          <NavItem :content="'Home'" :activeNav="routeSelected === 'Home'" @click="navigateTo('Home')" ></NavItem>
         </div>
         <div :class="`${cssPrefix}__nav-element`">
-          <NavItem :content="'About'"  @click="navigateTo('About')" ></NavItem>
+          <NavItem :content="'About'" :activeNav="routeSelected === 'About'"  @click="navigateTo('About')" ></NavItem>
         </div>
         <div :class="`${cssPrefix}__nav-element`">
-          <NavItem :content="'Projects'"  @click="navigateTo('Projects')" ></NavItem>
+          <NavItem :content="'Projects'" :activeNav="routeSelected === 'Projects'"  @click="navigateTo('Projects')" ></NavItem>
         </div>
         <div :class="`${cssPrefix}__nav-element`">
-          <NavItem :content="'Contact'"  @click="navigateTo('Contact')" ></NavItem>
+          <NavItem :content="'Contact'" :activeNav="routeSelected === 'Contact'"  @click="navigateTo('Contact')" ></NavItem>
         </div>
       </div>
     </div>
@@ -51,12 +51,15 @@ export default defineComponent({
   components: { NavItem },
   props: {},
   data() {
+    let routeSelected = '';
     return {
       cssPrefix,
+      routeSelected,
     };
   },
   methods: {
     navigateTo(path: string) {
+      this.routeSelected = path;
       router.push({ name: path });
     }
   },

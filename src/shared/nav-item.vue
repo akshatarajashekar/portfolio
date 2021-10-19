@@ -1,8 +1,8 @@
 <template>
 <div :class="`${cssPrefix}__body`">
-  <div :class="`${cssPrefix}__container`">
-    <div :class="`${cssPrefix}__text_property`">{{content}}</div>
-  </div>
+  <a :class="[`${cssPrefix}__container`, activeNav ? `${cssPrefix}__container-active` : '']">
+    <span :class="[`${cssPrefix}__text_property`]">{{content}}</span>
+  </a>
 </div>
 </template>
 <style lang="scss">
@@ -20,6 +20,9 @@
     
     cursor: pointer;
     margin: 10px 10px;
+    &-active {
+      border-bottom: 3px solid #24b3a2;
+    }
   }
   &__text_property {
     color: white;
@@ -44,6 +47,7 @@ export default defineComponent({
   name: 'NavItem',
   props:[
     'content',
+    'activeNav',
   ],
   components: {
   },
