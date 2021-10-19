@@ -13,6 +13,7 @@
     align-items: center;
     border-bottom: 3px solid #24b3a2;
     cursor: pointer;
+    margin: 0px 10px;
   }
   &__text_property {
     color: white;

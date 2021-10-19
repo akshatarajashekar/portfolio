@@ -1,12 +1,21 @@
 <template>
   <div :class="[`${cssPrefix}`]">
     <div :class="[`flex-box`]">
-      <div :class="['flex-box-left']"  @click="navigateToHome">
+      <div :class="['flex-box-left']"  @click="navigateTo('AppMain')">
         <img :class="[`${cssPrefix}__home-icon`]" src="../assets/images/home.png"/>
       </div>
       <div :class="['flex-box-right']">
         <div :class="`${cssPrefix}__nav-element`">
-          <NavItem :content="'About'"  @click="navigateToAbout" ></NavItem>
+          <NavItem :content="'Home'"  @click="navigateTo('Home')" ></NavItem>
+        </div>
+        <div :class="`${cssPrefix}__nav-element`">
+          <NavItem :content="'About'"  @click="navigateTo('About')" ></NavItem>
+        </div>
+        <div :class="`${cssPrefix}__nav-element`">
+          <NavItem :content="'Projects'"  @click="navigateTo('Projects')" ></NavItem>
+        </div>
+        <div :class="`${cssPrefix}__nav-element`">
+          <NavItem :content="'Contact'"  @click="navigateTo('Contact')" ></NavItem>
         </div>
       </div>
     </div>
@@ -29,6 +38,7 @@
   .flex-box-right {
     justify-content: flex-end;
     margin-left: auto;
+    display: inline-flex;
   }
 }
 </style>
@@ -49,11 +59,8 @@ export default defineComponent({
     };
   },
   methods: {
-    navigateToAbout() {
-      router.push({ name: "About" });
-    },
-    navigateToHome() {
-      router.push({ name: "AppMain" });
+    navigateTo(path: string) {
+      router.push({ name: path });
     }
   },
 });

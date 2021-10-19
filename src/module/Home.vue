@@ -2,12 +2,14 @@
   <div :class="`${cssPrefix}`">
     <div  :class="`${cssPrefix}__body`">
       <div :class="`${cssPrefix}__body_container`">
+        <div :class="`${cssPrefix}__description_container`">
         <h1 :class="`${cssPrefix}__header`">
           Lorem Ipsum
         </h1>
         <h2  :class="`${cssPrefix}__content`">
           "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
         </h2>
+        </div>
       </div>
     </div>
   </div>
