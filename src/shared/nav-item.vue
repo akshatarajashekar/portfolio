@@ -1,18 +1,23 @@
 <template>
+<div :class="`${cssPrefix}__body`">
   <div :class="`${cssPrefix}__container`">
-  <div :class="`${cssPrefix}__text_property`">{{content}}</div>
+    <div :class="`${cssPrefix}__text_property`">{{content}}</div>
   </div>
+</div>
 </template>
 <style lang="scss">
 .nav-item {
+  &__body {
+    height: 80px;;
+  }
   &__container {
-    width: 55px;;
+    width: 60px;;
     height: 34px;
     display: flex;
     justify-content: center;
     padding: 0 6px;
     align-items: center;
-    border-bottom: 3px solid #24b3a2;
+    
     cursor: pointer;
     margin: 10px 10px;
   }
@@ -24,12 +29,13 @@
   
 }
 .nav-item__container:hover {
-    width: 55px;
-    background: #24b3a2;
-    border-radius: 50%;
-    height: 55px;
-    margin: 0 10px;
-  }
+  // width: 60px;
+  // background: #24b3a2;
+  // border-radius: 50%;
+  // height: 60px;
+  // margin: 0 10px;
+  border-bottom: 3px solid #24b3a2;
+}
 </style>
 <script lang="ts">
 import { defineComponent } from 'vue';
