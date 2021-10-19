@@ -1,9 +1,6 @@
 <template>
   <div :class="[`${cssPrefix}`]">
     <div :class="[`flex-box`]">
-      <div :class="['flex-box-left']"  @click="navigateTo('AppMain')">
-        <img :class="[`${cssPrefix}__home-icon`]" src="../assets/images/home.png"/>
-      </div>
       <div :class="['flex-box-right']">
         <div :class="`${cssPrefix}__nav-element`">
           <NavItem :content="'Home'"  @click="navigateTo('Home')" ></NavItem>
