@@ -1,8 +1,8 @@
 <template>
 <div :class="`${cssPrefix}__body`">
-  <a :class="[`${cssPrefix}__container`, activeNav ? `${cssPrefix}__container-active` : '']">
-    <span :class="[`${cssPrefix}__text_property`]">{{content}}</span>
-  </a>
+  <div :class="[`${cssPrefix}__container`, activeNav ? `${cssPrefix}__container-active` : '']">
+    <h2 :class="[`${cssPrefix}__text_property`]">{{content}}</h2>
+  </div>
 </div>
 </template>
 <style lang="scss">
@@ -25,8 +25,9 @@
     }
   }
   &__text_property {
+    font-weight: 300;;
     color: black;
-    font-size: 16px;
+    font-size: 20px;
     font-family: "Open Sans";
   }
   

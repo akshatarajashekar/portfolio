@@ -16,7 +16,7 @@
         </div>
          <div :class="`${cssPrefix}__mode-icon`"> 
           <font-awesome-icon icon="sun" @click="changeMode('dark')" v-if="modeSelected === 'light'"/>
-          <font-awesome-icon icon="moon" :class="'fa-light'" @click="changeMode('light')" v-if="modeSelected === 'dark'"/>
+          <font-awesome-icon icon="moon" @click="changeMode('light')" v-if="modeSelected === 'dark'"/>
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@
   }
   &__mode-icon {
     cursor: pointer;
-    padding-top: 16px;
+    padding: 18px 0 0 6px;
   }
 }
 </style>
