@@ -14,6 +14,10 @@
         <div :class="`${cssPrefix}__nav-element`">
           <NavItem :content="'Contact'" :activeNav="routeSelected === 'Contact'"  @click="navigateTo('Contact')" ></NavItem>
         </div>
+         <div :class="`${cssPrefix}__mode-icon`"> 
+          <font-awesome-icon icon="sun" @click="changeMode('dark')" v-if="modeSelected === 'light'"/>
+          <font-awesome-icon icon="moon" :class="'fa-light'" @click="changeMode('light')" v-if="modeSelected === 'dark'"/>
+        </div>
       </div>
     </div>
   </div>
@@ -36,6 +40,10 @@
     margin-left: auto;
     display: inline-flex;
   }
+  &__mode-icon {
+    cursor: pointer;
+    padding-top: 16px;
+  }
 }
 </style>
 <script lang="ts">
@@ -51,15 +59,20 @@ export default defineComponent({
   props: {},
   data() {
     let routeSelected = '';
+    let modeSelected = 'light';
     return {
       cssPrefix,
       routeSelected,
+      modeSelected,
     };
   },
   methods: {
     navigateTo(path: string) {
       this.routeSelected = path;
       router.push({ name: path });
+    },
+    changeMode(mode: string) {
+      this.modeSelected = mode;
     }
   },
 });
