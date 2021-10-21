@@ -20,7 +20,6 @@
 </template>
 <style scoped lang="scss">
 .app-header {
-  padding: 20px 40px;
   &__home-icon {
     width: 25px;
     height: 25px;

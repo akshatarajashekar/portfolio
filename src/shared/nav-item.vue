@@ -25,7 +25,7 @@
     }
   }
   &__text_property {
-    color: white;
+    color: black;
     font-size: 16px;
     font-family: "Open Sans";
   }

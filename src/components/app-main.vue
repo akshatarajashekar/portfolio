@@ -6,9 +6,10 @@
 </template>
 <style scoped lang="scss">
 .app-main {
-  background-color: black;
-  width: 100%;
+  padding: 0px 40px 0 40px;
+  background-color: white;
   height: 100vh;
+  font-family: 'Open Sans';
 }
 </style>
 <script lang="ts">

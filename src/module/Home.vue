@@ -3,12 +3,20 @@
     <div  :class="`${cssPrefix}__body`">
       <div :class="`${cssPrefix}__body_container`">
         <div :class="`${cssPrefix}__description_container`">
-        <h1 :class="`${cssPrefix}__header`">
-          Lorem Ipsum
-        </h1>
+        <div :class="`${cssPrefix}__description__header`">
+        <h1>  Hey, I'm Akshata </h1>
+        </div>
         <h2  :class="`${cssPrefix}__content`">
           "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
         </h2>
+        </div>
+      </div>
+      <div :class="`${cssPrefix}__aboutme`">
+        <div :class="`${cssPrefix}__aboutme__container`">
+          <h2 :class="`${cssPrefix}__aboutme-header`">About Me</h2>
+          <div :class="`${cssPrefix}__aboutme-description`">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+          </div>
         </div>
       </div>
     </div>
@@ -17,24 +25,35 @@
 <style lang="scss">
 .home {
   padding-top: 120px;
-  color: white;
   &__body {
-    
-    padding: 20px 40px;
+    padding: 20px 100px;
     &_container {
+      width: 40%;
       display: block;
     }
   }
-  &__header {
-     display: flex;
-    justify-content: center;
+  &__description {
+    &__header h1{
+    //  display: flex;
+    // justify-content: center;
+    color: #24b3a2;
     font-family: "Open Sans";
   }
+  }
   &__content {
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
     font-family: "Open Sans";
     font-weight: 300;
+  }
+  &__aboutme {
+    padding-top: 450px;
+    &__container {
+      // text-align: center;
+    }
+    &-header{
+      color: #24b3a2;
+    }
   }
 }
 </style>
