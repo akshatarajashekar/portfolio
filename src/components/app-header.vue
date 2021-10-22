@@ -15,8 +15,11 @@
           <NavItem :content="'Contact'" :activeNav="routeSelected === 'Contact'"  @click="navigateTo('Contact')" ></NavItem>
         </div>
          <div :class="`${cssPrefix}__mode-icon`"> 
-          <font-awesome-icon icon="sun" @click="changeMode('dark')" v-if="modeSelected === 'light'"/>
-          <font-awesome-icon icon="moon" @click="changeMode('light')" v-if="modeSelected === 'dark'"/>
+          <!-- <font-awesome-icon icon="sun" @click="changeMode('dark')" v-if="modeSelected === 'light'"/>
+          <font-awesome-icon icon="moon" @click="changeMode('light')" v-if="modeSelected === 'dark'"/> -->
+
+          <img src="../assets/svg/sun.svg" alt="sun"  @click="changeMode('dark')"  v-if="modeSelected === 'light'">
+          <img src="../assets/svg/moon.svg" alt="moon" @click="changeMode('light')" v-if="modeSelected === 'dark'">
         </div>
       </div>
     </div>
@@ -41,9 +44,14 @@
     display: inline-flex;
   }
   &__mode-icon {
+    width: 16px;
+    height: 16px;
     cursor: pointer;
-    padding: 18px 0 0 6px;
+    padding: 21px 0 0 6px;
   }
+}
+.sunColor {
+  fill: red;
 }
 </style>
 <script lang="ts">
