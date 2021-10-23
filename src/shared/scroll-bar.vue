@@ -10,13 +10,13 @@
   overflow: auto;
 }
 .scroll-bar::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); // to remove background
   border-radius: 10px;
-  background-color: #F5F5F5;
+  background-color: #ffffff;
 }
 .scroll-bar::-webkit-scrollbar {
   width: 8px;
-  background-color: #F5F5F5;
+  background-color: #ffffff;
 }
 .scroll-bar::-webkit-scrollbar-thumb {
   border-radius: 10px;
@@ -24,13 +24,13 @@
   background-color: #5555555c;
 }
 .scroll-bar::-moz-scrollbar-track {
-  -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  // -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  background-color: #F5F5F5;
+  background-color: #ffffff;
 }
 .scroll-bar::-moz-webkit-scrollbar {
   width: 8px;
-  background-color: #F5F5F5;
+  background-color: #ffffff;
 }
 .scroll-bar::-moz-webkit-scrollbar-thumb {
   border-radius: 10px;
