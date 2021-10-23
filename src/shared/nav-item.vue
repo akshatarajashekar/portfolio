@@ -33,11 +33,6 @@
   
 }
 .nav-item__container:hover {
-  // width: 60px;
-  // background: #24b3a2;
-  // border-radius: 50%;
-  // height: 60px;
-  // margin: 0 10px;
   border-bottom: 3px solid #24b3a2;
 }
 </style>

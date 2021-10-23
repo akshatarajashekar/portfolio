@@ -7,7 +7,7 @@
         <h1>  Hey, I'm Akshata </h1>
         </div>
         <h2  :class="`${cssPrefix}__content`">
-          "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
         </h2>
         </div>
       </div>
@@ -34,22 +34,17 @@
   }
   &__description {
     &__header h1{
-    //  display: flex;
-    // justify-content: center;
     color: #24b3a2;
     font-family: "Open Sans";
   }
   }
   &__content {
-    // display: flex;
-    // justify-content: center;
     font-family: "Open Sans";
     font-weight: 300;
   }
   &__aboutme {
     padding-top: 450px;
     &__container {
-      // text-align: center;
     }
     &-header{
       color: #24b3a2;
