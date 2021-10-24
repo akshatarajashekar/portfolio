@@ -52,3 +52,4 @@ export type RootStoreModuleTypes<S = mainStateType> = Omit<
     payload?: Parameters<AugmentedActionContext[K]>[1],
     options?: DispatchOptions
   ): ReturnType<AugmentedActionContext[K]>;
+};
