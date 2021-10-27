@@ -18,8 +18,8 @@
           <!-- <font-awesome-icon icon="sun" @click="changeMode('dark')" v-if="modeSelected === 'light'"/>
           <font-awesome-icon icon="moon" @click="changeMode('light')" v-if="modeSelected === 'dark'"/> -->
 
-          <img src="../assets/svg/sun.svg" alt="sun"  @click="changeMode('dark')"  v-if="modeSelected === 'light'">
-          <img src="../assets/svg/moon.svg" alt="moon" @click="changeMode('light')" v-if="modeSelected === 'dark'">
+          <img src="../assets/svg/sun.svg" alt="sun"  @click="changeMode('dark')"  v-if="selectedTheme === 'light'">
+          <img src="../assets/svg/moon.svg" alt="moon" @click="changeMode('light')" v-if="selectedTheme  === 'dark'">
         </div>
       </div>
     </div>
@@ -55,33 +55,47 @@
 }
 </style>
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, computed, readonly } from "vue";
+import { namespace } from 'vuex-class';
 import NavItem from "../shared/nav-item.vue";
 import router from "@/router";
+import { useStore } from '../store';
+import { mapGetters } from 'vuex';
+import { ThemeType } from './types';
 
 const cssPrefix = "app-header";
-
 export default defineComponent({
   name: "AppHeader",
   components: { NavItem },
-  props: {},
   data() {
     let routeSelected = '';
-    let modeSelected = 'light';
+    let modeSelected: ThemeType = 'light';
+    
     return {
       cssPrefix,
       routeSelected,
       modeSelected,
     };
   },
+  setup() {
+    const store = useStore();
+    const themeSelected: 'dark'| 'light' = store.getters['coreStoreModule/selectedTheme'];
+    console.log(store, themeSelected);
+    return { themeSelected };
+  },
+  computed: {
+    ...mapGetters('coreStoreModule', ['selectedTheme'])
+  },
   methods: {
     navigateTo(path: string) {
       this.routeSelected = path;
       router.push({ name: path });
     },
-    changeMode(mode: string) {
-      this.modeSelected = mode;
+    changeMode(mode: ThemeType) {
+      const store = useStore();
+      store.dispatch('coreStoreModule/SET_ACTION_THEME', mode);
     }
+    
   },
 });
 </script>

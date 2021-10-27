@@ -1,9 +1,8 @@
 import { ActionTree } from "vuex";
-import { ActionTypes, MutationTypes, rootStoreState, coreStateType } from './types';
+import { ActionTypes, coreRootStoreState, coreStateType, MutationTypes } from './types';
 
-export const actions: ActionTree<rootStoreState, coreStateType> = {
+export const actions: ActionTree<coreRootStoreState, coreStateType> = {
   [ActionTypes.SET_ACTION_THEME]({ commit }, payload: number) {
     commit(MutationTypes.SET_MUTATION_THEME, payload);
   }
-  
 };

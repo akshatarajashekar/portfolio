@@ -1,8 +1,9 @@
 import { ActionContext } from "vuex";
 import { Store as VuexStore, CommitOptions, DispatchOptions } from "vuex";
-
+import { ActionTypes as coreActionType } from "../../components/coreStore/types";
 //actions
 export enum ActionTypes {
+  'SET_ACTION' = 'SET_ACTION'
 }
 export type AugmentedActionContext = {
   commit<K extends keyof mainMutationsTypes>(
@@ -11,24 +12,25 @@ export type AugmentedActionContext = {
   ): ReturnType<mainMutationsTypes[K]>;
 } & Omit<ActionContext<rootStoreState, mainStateType>, "commit">;
 
-export interface coreActionsTypes {
-
-}
 // mutations
 export enum MutationTypes {
+  SET_MUTATION = "SET_MUTATION"
 }
 export type mainMutationsTypes<S = mainStateType> = {
+  [MutationTypes.SET_MUTATION](state: S, payload: number): void;
 };
 // getters
 export interface gettersTypes {
+  selectedval(state: rootStoreState): number;
 }
 //state
 export interface mainStateType {
+  val: number;
 }
 
 export interface rootStoreState {
+  val: number;
 }
-
 
 export type RootStoreModuleTypes<S = mainStateType> = Omit<
   VuexStore<S>,
@@ -53,3 +55,12 @@ export type RootStoreModuleTypes<S = mainStateType> = Omit<
     options?: DispatchOptions
   ): ReturnType<AugmentedActionContext[K]>;
 };
+
+
+
+export const AllActionTypes = { ...coreActionType, ...ActionTypes };
+
+// store/mutation-types.ts
+import { MutationTypes as coreMutationTypes } from "../../components/coreStore/types";
+
+export const AllMutationTypes = {...coreMutationTypes,...MutationTypes };

@@ -20,9 +20,10 @@
 }
 </style>
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, computed } from 'vue';
 import AppHeader from './app-header.vue';
 import ScrollBar from '../shared/scroll-bar.vue';
+import { useStore } from '../store';
 const cssPrefix = 'app-main';
 
 export default defineComponent({
@@ -30,6 +31,10 @@ export default defineComponent({
   components: { AppHeader, ScrollBar },
   props: {
     msg: String,
+  },
+  setup() {
+    const store = useStore();
+    const themeSelected = computed(() => store.getters.selectedTheme)
   },
   data() {
     return {

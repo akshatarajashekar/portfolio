@@ -1,12 +1,11 @@
-import { GetterTree } from "vuex";
-import { state } from './state';
-import { coreStateType, rootStoreState } from './types';
+import { GetterTree,  } from "vuex";
+import { coreStateType, coreRootStoreState } from './types';
 
 export type Getters = {
-  selectedTheme(state: coreStateType): coreStateType
+  selectedTheme(state: coreStateType): 'dark' | 'light'
 }
-export const getters: GetterTree<rootStoreState, coreStateType> & Getters  = {
-  selectedTheme: (state: any) => {
+export const getters: GetterTree<coreRootStoreState, coreStateType> & Getters  = {
+  selectedTheme: (state: coreStateType): 'dark' | 'light' => {
     return state.theme;
   },
 };

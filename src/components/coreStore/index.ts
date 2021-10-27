@@ -1,15 +1,16 @@
 import { Module } from "vuex";
-import { rootStoreState, coreStateType } from "./types";
+import { coreRootStoreState, coreStateType } from "./types";
 import { getters } from "./getters";
 import { actions } from "./actions";
 import { mutations } from "./mutations";
 import { state } from "./state";
 
-const coreStore: Module<rootStoreState, coreStateType> = {
+const coreStoreModule: Module<coreRootStoreState, coreStateType> = {
+  namespaced: true,
   state,
   getters,
   mutations,
   actions
 };
 
-export default coreStore;
+export default coreStoreModule;

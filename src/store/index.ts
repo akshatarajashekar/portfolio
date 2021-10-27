@@ -1,11 +1,15 @@
 import { createStore } from "vuex";
-import { rootStoreState } from "./modules/types";
 import { coreStoreModuleTypes } from "../components/coreStore/types";
-import { RootStoreModuleTypes } from "./modules/types";
-
+import coreStoreModule from "@/components/coreStore";
 import rootStore from "./modules";
-
-export const store = createStore<rootStoreState>(rootStore);
+import { RootStoreModuleTypes, rootStoreState } from "./modules/types";
+export function useStore() {
+  return store;
+}
+export const store = createStore<any>({
+  modules: { rootStore, coreStoreModule,
+  },
+});
 
 type StoreModules = {
   coreStore: coreStoreModuleTypes;

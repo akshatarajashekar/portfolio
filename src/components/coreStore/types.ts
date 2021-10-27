@@ -1,4 +1,5 @@
 import { ActionContext } from "vuex";
+import { Store as VuexStore, CommitOptions, DispatchOptions } from "vuex";
 //actions
 export enum ActionTypes {
   SET_ACTION_THEME = 'SET_ACTION_THEME'
@@ -8,7 +9,7 @@ export type AugmentedActionContext = {
     key: K,
     payload: Parameters<coreMutationsTypes[K]>[1]
   ): ReturnType<coreMutationsTypes[K]>;
-} & Omit<ActionContext<rootStoreState, coreStateType>, "commit">;
+} & Omit<ActionContext<coreRootStoreState, coreStateType>, "commit">;
 
 export interface coreActionsTypes {
   [ActionTypes.SET_ACTION_THEME](
@@ -25,19 +26,16 @@ export type coreMutationsTypes<S = coreStateType> = {
 };
 // getters
 export interface gettersTypes {
-  selectedTheme(state: coreStateType): 'dark' | 'light';
+  selectedTheme(state: any): 'dark' | 'light';
 }
 //state
 export interface coreStateType {
   theme: 'dark' | 'light';
 }
 
-export interface rootStoreState {
+export interface coreRootStoreState {
   theme: 'dark' | 'light';
 }
-
-
-import { Store as VuexStore, CommitOptions, DispatchOptions } from "vuex";
 
 export type coreStoreModuleTypes<S = coreStateType> = Omit<
   VuexStore<S>,
