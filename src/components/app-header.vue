@@ -55,8 +55,7 @@
 }
 </style>
 <script lang="ts">
-import { defineComponent, computed, readonly } from "vue";
-import { namespace } from 'vuex-class';
+import { defineComponent } from "vue";
 import NavItem from "../shared/nav-item.vue";
 import router from "@/router";
 import { useStore } from '../store';
@@ -80,7 +79,6 @@ export default defineComponent({
   setup() {
     const store = useStore();
     const themeSelected: 'dark'| 'light' = store.getters['coreStoreModule/selectedTheme'];
-    console.log(store, themeSelected);
     return { themeSelected };
   },
   computed: {

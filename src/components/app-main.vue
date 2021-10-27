@@ -1,7 +1,7 @@
 <template>
   <div :class="`${cssPrefix}`">
     <ScrollBar>
-    <div :class="`${cssPrefix}__container`">
+    <div :class="[`${cssPrefix}__container`, selectedTheme === 'light' ? `${cssPrefix}__light_theme` : `${cssPrefix}__dark_theme`]">
     <app-header></app-header>
     <router-view/>
     </div>
@@ -10,8 +10,15 @@
 </template>
 <style scoped lang="scss">
 .app-main {
+  &__light_theme {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  &__dark_theme {
+    background-color: #17223B;
+    color: #ffffff;
+  }
   
-  background-color: white;
   height: 100vh;
   font-family: 'Open Sans';
   &__container {
@@ -23,7 +30,8 @@
 import { defineComponent, computed } from 'vue';
 import AppHeader from './app-header.vue';
 import ScrollBar from '../shared/scroll-bar.vue';
-import { useStore } from '../store';
+import { mapGetters } from 'vuex';
+
 const cssPrefix = 'app-main';
 
 export default defineComponent({
@@ -32,9 +40,8 @@ export default defineComponent({
   props: {
     msg: String,
   },
-  setup() {
-    const store = useStore();
-    const themeSelected = computed(() => store.getters.selectedTheme)
+  computed: {
+    ...mapGetters('coreStoreModule', ['selectedTheme'])
   },
   data() {
     return {
