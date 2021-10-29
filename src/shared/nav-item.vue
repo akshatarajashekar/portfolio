@@ -11,7 +11,7 @@
     height: 80px;;
   }
   &__container {
-    width: 60px;;
+    // width: 60px;;
     height: 34px;
     display: flex;
     justify-content: center;

@@ -28,6 +28,8 @@
   &__body {
     padding: 20px 100px;
     &_container {
+      border-left: 15px solid #24b3a2;
+      padding-left: 15px;
       width: 40%;
       display: block;
     }
