@@ -7,7 +7,7 @@
         <h1>  Hey, I'm Akshata </h1>
         </div>
         <h2  :class="`${cssPrefix}__content`">
-          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+          Software developer in Bangalore
         </h2>
         </div>
       </div>
@@ -15,7 +15,9 @@
         <div :class="`${cssPrefix}__aboutme__container`">
           <h2 :class="`${cssPrefix}__aboutme-header`">About Me</h2>
           <div :class="`${cssPrefix}__aboutme-description`">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+            Passionate software developer with 5 + years' experience in web development. Worked across multiple projects and
+        teams and delivered projects on time. Aspiring to combine all technical skills to excel as a full stack developer. Eager to
+        learn new technologies.
           </div>
         </div>
       </div>
